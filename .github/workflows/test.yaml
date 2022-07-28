@@ -14,12 +14,13 @@ jobs:
     - name: Setup Golang
       uses: actions/setup-go@v1
       with:
-          go-version: ${{ env.GOLANG_VERSION }}
+        go-version: ${{ env.GOLANG_VERSION }}
     - name: Install required packages
-        run: |
-          sudo apt-get install git -y
-    - uses: actions/checkout@v2
+      run: |
+        sudo apt-get install git -y
     - name: Run a one-line script
       run: | 
         echo Hello, world!
+        pwd
+        ls
         git diff --exit-code bundle/
